@@ -10,7 +10,7 @@ client.on("message", (msg) => {
   if (msg.channel.type === "dm") return;
   if (msg.channel.name !== "🤖bot-chat") return;
   if (msg.author.bot) return;
-  const prefix = "-";
+  const prefix = "$";
   if (!msg.content.startsWith(prefix)) return;
   const msgContentCase = msg.content.substring(1).toLocaleLowerCase();
   const msgContent = msg.content.substring(1);
