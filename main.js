@@ -24,17 +24,17 @@ client.on("message", (msg) => {
       .addFields(
         {
           name: "**__Help__**",
-          value: "`-help`",
+          value: "`$help`",
           inline: true,
         },
         {
           name: "**__Hello__**",
-          value: "`-hello`",
+          value: "`$hello`",
           inline: true,
         },
         {
           name: "**__Change Name Of Bot__**",
-          value: "`-username newName`",
+          value: "`$username newName`",
           inline: true,
         }
       );
