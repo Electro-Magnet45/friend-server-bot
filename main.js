@@ -1,6 +1,34 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const keepAlive = require("./server.js");
+const cron = require("node-cron");
+
+var job = cron.schedule(
+  "0 0 * * *",
+  () => {
+    client.channels.cache.get(process.env.CHID).send("Cron Testing\nLOL");
+    if (new Date().getMonth() === 5) {
+      if (new Date().getDate() === 12) {
+        client.channels.cache
+          .get(process.env.CHID)
+          .send(
+            `Happy Birthday to <@${process.env.HESTIAID}> :birthday: :birthday: `
+          );
+      } else if (new Date().getDate() === 26) {
+        client.channels.cache
+          .get(process.env.CHID)
+          .send(
+            `Happy Birthday to <@${process.env.ASWINID}> :birthday: :birthday: `
+          );
+      }
+    }
+  },
+  {
+    timezone: "Asia/Kolkata",
+  }
+);
+
+job.start();
 
 client.on("ready", () => {
   console.log("Logged in");
