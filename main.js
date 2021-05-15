@@ -9,7 +9,7 @@ var job = cron.schedule(
     client.channels.cache
       .get(process.env.MAINCHID)
       .send(
-        "<@everyone> Good Morning ! :sun_with_face: :sun_with_face: :sun_with_face:  "
+        "@everyone Good Morning ! :sun_with_face: :sun_with_face: :sun_with_face:  "
       );
     if (new Date().getMonth() === 5) {
       if (new Date().getDate() === 12) {
